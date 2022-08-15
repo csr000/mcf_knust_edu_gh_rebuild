@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import Index, About, Cohort, Register, Staff, Event, News, Announcements, Publications, Contact, Socials
 
+
+
 def index(request, context={}):
     context['data'] = Index.objects.get(pk=1)
     return render(request, 'index.html', context)
@@ -20,12 +22,14 @@ def register(request, context={}):
     return render(request, 'register.html', context)
 
 
-def staff(request):
-    return render(request, 'staff.html')
+def staff(request, context={}):
+    context['data'] = Staff.objects.all()
+    return render(request, 'staff.html', context)
 
 
-def event(request):
-    return render(request, 'event.html')
+def event(request,context={}):
+    context['data'] = Event.objects.all()
+    return render(request, 'event.html', context)
 
 
 def news(request):
@@ -36,8 +40,9 @@ def announcements(request):
     return render(request, 'announcements.html')
 
 
-def publications(request):
-    return render(request, 'publications.html')
+def publications(request, context={}):
+    context['data'] = Publications.objects.all()
+    return render(request, 'publications.html', context)
 
 
 def contact(request):

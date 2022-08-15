@@ -43,7 +43,7 @@ class Register(models.Model):
 
 
 class Staff(models.Model):
-    img = models.ImageField()
+    img = models.ImageField(upload_to="staff")
     name = models.CharField(max_length=64)
     role = models.CharField(max_length=64)
 
@@ -80,6 +80,7 @@ class Announcements(models.Model):
 
 class Publications(models.Model):
     title = models.CharField(max_length=64)
+    url_to_file = models.CharField(max_length=128)
 
     class Meta:
         verbose_name_plural = 'Publications'

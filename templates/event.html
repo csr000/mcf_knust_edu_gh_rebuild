@@ -1,102 +1,51 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 
-    <!-- event area start -->
-    <div class="event-area pd-top-120 pd-bottom-120">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="media single-event-inner">
-              <!-- Event.objects.get(pk=1).date_posted.strftime("%B")[:3] -->
-              <!-- .strftime("%H:%M %p") -->
-              <div class="media-left date">
-                <span>JAN</span>
-                12
-              </div>
-              <div class="media-body details">
-                <ul class="blog-meta">
-                  <li><i class="fa fa-clock-o"></i> 12:00 AM To 11:59 PM</li>
-                  <li><i class="fa fa-map-marker"></i> Dean of Students</li>
-                </ul>
-                <h5><a href=" {% static 'event-details.html' %} ">Meet the Alumni</a></h5>
-              </div>
-            </div>
+<!-- event area start -->
+<div class="event-area pd-top-120 pd-bottom-120">
+  <div class="container">
+    <div class="row">
+      {% for i in data %}
+      <div class="col-lg-6">
+        <div class="media single-event-inner">
+          <div class="media-left date">
+            <span style="text-transform: uppercase"
+              >{{ i.date_posted|date:"b" }}</span
+            ><br />
+            {{ i.date_posted.day }}
           </div>
-          <div class="col-lg-6">
-            <div class="media single-event-inner">
-              <div class="media-left date">
-                <span>JAN</span>
-                23
-              </div>
-              <div class="media-body details">
-                <ul class="blog-meta">
-                  <li><i class="fa fa-clock-o"></i> 12:00 AM To 11:59 PM</li>
-                  <li><i class="fa fa-map-marker"></i> KNUST Pool Side</li>
-                </ul>
-                <h5>
-                  <a href=" {% static 'event-details.html' %} "
-                    >MCFSP at KNUST Summer Camp, 2019</a
-                  >
-                </h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="media single-event-inner">
-              <div class="media-left date">
-                <span>JAN</span>
-                26
-              </div>
-              <div class="media-body details">
-                <ul class="blog-meta">
-                  <li><i class="fa fa-clock-o"></i> 12:00 AM To 11:59 PM</li>
-                  <li><i class="fa fa-map-marker"></i> Amonoo Neizer </li>
-                </ul>
-                <h5>
-                  <a href=" {% static 'event-details.html' %} "
-                    >2019 Faculty Development Symposium (FDS)</a
-                  >
-                </h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="media single-event-inner">
-              <div class="media-left date">
-                <span>JAN</span>
-                30
-              </div>
-              <div class="media-body details">
-                <ul class="blog-meta">
-                  <li><i class="fa fa-clock-o"></i> 12:00 AM To 11:59 PM</li>
-                  <li><i class="fa fa-map-marker"></i> New Social Science Auditorium</li>
-                </ul>
-                <h5>
-                  <a href=" {% static 'event-details.html' %} "
-                    >Health Talk and Screening for Scholars</a
-                  >
-                </h5>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12">
-            <nav class="td-page-navigation text-center">
-              <ul class="pagination">
-                <li class="pagination-arrow">
-                  <a href="#"><i class="fa fa-angle-double-left"></i></a>
-                </li>
-                <li><a href="#">1</a></li>
-                <li><a class="active" href="#">2</a></li>
-                <li><a href="#">...</a></li>
-                <li><a href="#">3</a></li>
-                <li class="pagination-arrow">
-                  <a href="#"><i class="fa fa-angle-double-right"></i></a>
-                </li>
-              </ul>
-            </nav>
+          <div class="media-body details">
+            <ul class="blog-meta">
+              <li>
+                <i class="fa fa-clock-o"></i> {{ i.date_posted|date:"h:i" }}
+              </li>
+              <li><i class="fa fa-map-marker"></i> {{ i.location }}</li>
+            </ul>
+            <h5>
+              <a href=" {% static 'event-details.html' %} ">{{ i.title }}</a>
+            </h5>
           </div>
         </div>
       </div>
+      {% endfor %}
+
+      <div class="col-12">
+        <nav class="td-page-navigation text-center">
+          <ul class="pagination">
+            <li class="pagination-arrow">
+              <a href="#"><i class="fa fa-angle-double-left"></i></a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a class="active" href="#">2</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">3</a></li>
+            <li class="pagination-arrow">
+              <a href="#"><i class="fa fa-angle-double-right"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
-    <!-- event area end -->
-    {% endblock content %}
+  </div>
+</div>
+<!-- event area end -->
+{% endblock content %}
