@@ -1,91 +1,9 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
-    <!-- breadcrumb start -->
-    <!-- <div class="breadcrumb-area bg-overlay" style="background-image:url(' {% static 'assets/img/bg/3.png' %} ')">
-        <div class="container">
-            <div class="breadcrumb-inner">
-                <div class="section-title mb-0 text-center">
-                    <h2 class="page-title">All You Need To Know</h2>
-                    <ul class="page-list">
 
+<div class="blog-area pd-top-120 pd-bottom-120">
+  <div class="container">
+    <div class="page-content">{{ data.info|safe}}</div>
+  </div>
+</div>
 
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- breadcrumb end -->
-
-    <!-- blog area start -->
-    <div class="blog-area pd-top-120 pd-bottom-120">
-        <div class="container">
-            <div class="page-content">
-
-                <h3 class="page-title">All You Need To Know</h2>
-                <p><strong>Mastercard Foundation Scholars Program at KNUST</strong></p>
-
-                <p>Our goal is to raise the next generation of ethical and transformational leaders who would influence
-                    change on the African Continent.</p>
-
-                <p>The Mastercard Foundation Scholars Program at KNUST provides academically talented yet economically
-                    disadvantaged young people in Ghana and Africa with access to quality university education. The
-                    Program offers an opportunity for its scholars to receive holistic training that empowers them to be
-                    change leaders. The Scholars Program embodies an array of services including mentorship, cultural
-                    transition, etc. that will lead to the scholar’s academic success, community engagement and
-                    transition to employment opportunities which will further the goal of social and economic
-                    transformation of Africa.</p>
-
-                <h3>Eligibility:</h3>
-
-                <ol>
-                    <li>All Applicants with <strong>WASSCE or GBCE or ABCE or GCE O’Level and A’Leve</strong>l or their
-                        equivalent Results from an accredited/recognised institution and Certificate Ready and meets
-                        KNUST’s Admission Requirements. <strong>NO AWAITING RESULTS candidate will be accepted</strong>.
-                        Applicant’s result must be at least a year old.</li>
-                    <li>The Applicant must demonstrate that he/she has Critical Economic Needs.</li>
-                    <li>The Applicant must have Proven Records of Leadership and Community Engagement(s).</li>
-                    <li>Priority shall be given to;</li>
-                </ol>
-                <ul>
-                    <li><strong>Females</strong></li>
-                    <li><strong>Displaced Persons (Certified Refugees, Internally Displaced Persons, etc.) </strong>
-                    </li>
-                    <li><strong>Persons with Disability</strong></li>
-                </ul>
-                <ol start="5">
-                    <li>The Applicant must be prepared to <strong>Go-Back and Give-Back</strong> to his or her
-                        Community.</li>
-                </ol>
-                <h3>The Scholarship package includes:</h3>
-
-                <ul>
-                    <li>Comprehensive financial support (full tuition, fully paid on-campus accommodation, learning
-                        materials, transportation and monthly stipend).</li>
-                    <li>Counselling Support Services</li>
-                    <li>Career Development Services (including Industrial Mentorship, Career Guidance, Professional
-                        Development, Enterprise Development amongst others)</li>
-                    <li>Regular group meetings with other scholars that focus on personal and professional development
-                        opportunities and activities tailored to build societal relationships and scholars’ capacity.
-                    </li>
-                    <li>Continued academic support through academic mentoring, virtual learning and tutoring.</li>
-                    <li>Opportunities to participate in leadership congresses, community services and mentoring
-                        <strong>(Go-back Give- Back)</strong>,
-                    </li>
-                    <li>Uniquely sourced internships with industry for Professional development.</li>
-                    <li>The prestige of becoming part of and network with the growing family of the Mastercard
-                        Foundation Scholars Alumni and the Global Scholars Community.</li>
-                </ul>
-                <p><a href="{% url 'apply' %}  "><strong
-                            style="background-color: green; padding: 10px; color: rgb(255, 255, 255); border-radius: 4px; width: 100px; text-align: center; margin-top: 5px; display: inline !important;">APPLY
-                            FOR SCHOLARSHIP NOW!!</strong></a></p>
-
-
-
-                <div class="files-container">
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- blog area end -->
-    {% endblock content %}
+{% endblock content %}

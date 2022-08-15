@@ -11,7 +11,7 @@
       </div>
       <div class="col-lg-7 order-lg-1 align-self-center">
         <div class="banner-inner text-center text-lg-left mt-5 mt-lg-0">
-          <h6 class="b-animate-1 sub-title">Raising the next Generation</h6>
+          {{ data.motto|safe }}
           <h1 class="b-animate-2 title">
             Mastercard Foundation Scholarship 2022
           </h1>
@@ -39,25 +39,7 @@
       <div class="row no-gutters">
         <div class="col-lg-4 text-lg-left text-center">
           <div class="intro-title">
-            <h5 style="color: #fff">ABOUT THE SCHOLARS PROGRAM</h5>
-            <hr />
-            <p>
-              The Mastercard Foundation is an independent foundation based in
-              Toronto, Canada. It is one of the largest private foundations in
-              the world. Through its work with partner organizations, it
-              provides greater access to education, skills training and
-              financial services for people living in poverty, primarily in
-              Sub-Saharan Africa. The Foundation was established as an
-              independent entity in 2006 by MasterCard Worldwide when it became
-              a public company. No company executives serve on the Foundation’s
-              Board of Directors. All decisions are determined by the
-              Foundation’s Board of Directors and President and CEO. <br />Read
-              More
-            </p>
-            <!-- <ul>
-                                <li><i class="fa fa-check"></i> Nullam est </li>
-                                <li><i class="fa fa-check"></i> Mattis dictum nunc </li>
-                            </ul> -->
+            {{ data.about_program_col1|safe }}
           </div>
         </div>
         <div class="col-lg-8 align-self-center">
@@ -71,14 +53,7 @@
                   />
                 </div>
                 <div class="details">
-                  <h5>Give-Back Component</h5>
-                  <p>
-                    An integral component of the Program is the commitment from
-                    the Scholars to give back to their communities and countries
-                    of origin. Students demonstrate this commitment through
-                    volunteerism and community service, as well as other forms
-                    of experiential learning.
-                  </p>
+                  {{ data.about_program_col2|safe }}
                 </div>
               </div>
             </li>
@@ -91,15 +66,7 @@
                   />
                 </div>
                 <div class="details">
-                  <h5>Education and Learning</h5>
-                  <p>
-                    The goal of the Education and Learning Program is to enable
-                    access to quality, relevant tertiary education for
-                    economically disadvantaged youth and to develop
-                    next-generation leaders who will support social and economic
-                    transformation in their communities, Ghana, Africa and the
-                    world at large.
-                  </p>
+                  {{ data.about_program_col3|safe }}
                 </div>
               </div>
             </li>
@@ -112,15 +79,7 @@
                   />
                 </div>
                 <div class="details">
-                  <h5>Youth Livelihoods</h5>
-                  <p>
-                    The goal of this program is to enable young people to
-                    transition to employment. It provides out-of-school,
-                    unemployed young people with market-relevant skills,
-                    connections to employers, and access to financial services.
-                    It aims to provide economically disadvantaged youth with
-                    access to high-quality, relevant higher education.
-                  </p>
+                  {{ data.about_program_col4|safe }}
                 </div>
               </div>
             </li>
@@ -170,11 +129,7 @@
               <h6 class="sub-title right-line">ABOUT US</h6>
               <h2 class="title">OUR SCHOLARS</h2>
               <p class="content">
-                Students selected for The Mastercard Foundation Scholars Program
-                are provided with opportunities to realise their full potential.
-                Through Foundation partners, they receive holistic financial,
-                academic, and emotional support as they transition from
-                secondary to university education and into the workforce.
+                {{ data.our_scholars }}
               </p>
             </div>
           </div>
@@ -198,7 +153,7 @@
       <iframe
         width="1080"
         height="540"
-        src="https://www.youtube.com/embed/RdzDwn_w_w4"
+        src="{{ data.how_it_works_url }}" 
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -225,10 +180,7 @@
           ></span>
           <h3 style="color: #fff">Announcement</h3>
           <p class="mb-4">
-            Eugene The Mastercard Foundation Scholars Program at KNUST invites
-            applications from Scholars and Scholar Alumni within the Scholars
-            Program at KNUST for support from the Scholars Entrepreneurship Fund
-            (SEF).
+            {{ data.announcements }}
           </p>
         </div>
       </div>

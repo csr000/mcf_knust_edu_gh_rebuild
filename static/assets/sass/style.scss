@@ -41,20 +41,20 @@ Version: 1.0.2
 --------------------------------------------------------------*/
 
 //== Global Design
-@import "global/_mixins";
-@import "global/_variables";
-@import "global/_global";
-@import "global/_common";
-@import "global/_animate";
+@import "global/mixins";
+@import "global/variables";
+@import "global/global";
+@import "global/common";
+@import "global/animate";
 
 
 //== Pages
 //== Sections 
-@import "sections/_widgets";
-@import "sections/_navbar";
-@import "sections/_search";
-@import "sections/_banner";
-@import "sections/_content";
-@import "sections/_course";
-@import "sections/_blog";
-@import "sections/_footer";
+@import "sections/widgets";
+@import "sections/navbar";
+@import "sections/search";
+@import "sections/banner";
+@import "sections/content";
+@import "sections/course";
+@import "sections/blog";
+@import "sections/footer";

@@ -1,27 +1,13 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 
-    <!-- breadcrumb start -->
-    <!-- <div
-      class="breadcrumb-area bg-overlay"
-      style="background-image: url(' {% static 'assets/img/bg/3.png' %} ')"
-    >
-      <div class="container">
-        <div class="breadcrumb-inner">
-          <div class="section-title mb-0 text-center">
-            <h2 class="page-title">Event</h2>
-            
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!-- breadcrumb end -->
-
     <!-- event area start -->
     <div class="event-area pd-top-120 pd-bottom-120">
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
             <div class="media single-event-inner">
+              <!-- Event.objects.get(pk=1).date_posted.strftime("%B")[:3] -->
+              <!-- .strftime("%H:%M %p") -->
               <div class="media-left date">
                 <span>JAN</span>
                 12
