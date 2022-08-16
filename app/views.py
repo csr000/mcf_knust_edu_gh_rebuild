@@ -56,17 +56,17 @@ def cohort(request, id, context={}):
     context['data'] = CohortBatch.objects.all()
     match id:
         case '1':
-            context['data'].filter(batch='2014/2015 Academic Year')
+            context['data'] = context['data'].filter(batch='2014/2015 Academic Year')
             return render(request, 'cohort_one.html', context)
         case '2':
-            context['data'].filter(batch='2015/2016 Academic Year')
+            context['data'] = context['data'].filter(batch='2015/2016 Academic Year')
             return render(request, 'cohort_two.html', context)
         case '3':
-            context['data'].filter(batch='2016/2017 Academic Year')
+            context['data'] = context['data'].filter(batch='2016/2017 Academic Year')
             return render(request, 'cohort_three.html', context)
         case '4':
-            context['data'].filter(batch='2017/2018 Academic Year')
+            context['data'] = context['data'].filter(batch='2017/2018 Academic Year')
             return render(request, 'cohort_four.html', context)
         case '5':
-            context['data'].filter(batch='2018/2019 Academic Year')
+            context['data'] = context['data'].filter(batch='2018/2019 Academic Year')
             return render(request, 'cohort_five.html', context)

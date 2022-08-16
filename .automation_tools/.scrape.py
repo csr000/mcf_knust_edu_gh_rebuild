@@ -63,9 +63,9 @@ lect_name = [i.find("h4").text.strip() for i in res]
 
 res = zip(lect_name, lect_role)
 
-x= [' '.join(i[0].replace("\t", "").split()) for i in list(res)]
+x= [(' '.join(i[0].replace("\t", "").split()), ' '.join(i[1].replace("\t", "").split()) ) for i in list(res)]
 
-print(len(x))
+print(x)
 
 
 # new = ["""
