@@ -1,20 +1,5 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 
-<!-- breadcrumb start -->
-<!-- <div
-      class="breadcrumb-area bg-overlay"
-      style="background-image: url(' {% static 'assets/img/bg/3.png' %} ')"
-    >
-      <div class="container">
-        <div class="breadcrumb-inner">
-          <div class="section-title mb-0 text-center">
-            <h2 class="page-title">Publications</h2>
-          </div>
-        </div>
-      </div>
-    </div> -->
-<!-- breadcrumb end -->
-
 <!-- blog area start -->
 <div class="blog-area pd-top-120 pd-bottom-120">
   <div class="container">
@@ -24,12 +9,7 @@
           <ul>
             {% for i in data %}
             <li>
-              <a
-                href="{{ i.url_to_file }}"
-                ><strong
-                  >{{ i.title }}</strong
-                ></a
-              >
+              <a href="{{ i.url_to_file }}"><strong>{{ i.title }}</strong></a>
             </li>
             {% endfor %}
           </ul>

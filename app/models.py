@@ -27,12 +27,20 @@ class About(models.Model):
 
 
 class Cohort(models.Model):
-    img = models.ImageField()
+    img = models.ImageField(upload_to="cohort")
     name = models.CharField(max_length=64)
     programme = models.CharField(max_length=64)
 
     class Meta:
         verbose_name_plural = 'Cohort'
+
+
+class CohortBatch(models.Model):
+    batch = models.CharField(max_length=64)
+    cohort = models.ForeignKey(Cohort, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name_plural = 'Cohort Batches'
 
 
 class Register(models.Model):
@@ -64,7 +72,7 @@ class News(models.Model):
     img = models.ImageField()
     title = models.CharField(max_length=128)
     info = models.TextField()
-    date_published = models.DateTimeField(auto_now=True)
+    date_published = models.DateTimeField()
 
     class Meta:
         verbose_name_plural = 'News'
@@ -72,7 +80,7 @@ class News(models.Model):
 
 class Announcements(models.Model):
     title = models.CharField(max_length=128)
-    date_published = models.DateTimeField(auto_now=True)
+    date_published = models.DateTimeField()
 
     class Meta:
         verbose_name_plural = 'Announcements'
@@ -89,6 +97,7 @@ class Publications(models.Model):
 class Contact(models.Model):
     telephone = models.CharField(max_length=16)
     cell_phone = models.CharField(max_length=16)
+    address = models.TextField(max_length=256)
     email1 = models.CharField(max_length=32)
     email2 = models.CharField(max_length=32)
     map = models.TextField(max_length=128)

@@ -1,24 +1,5 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 
-<!-- breadcrumb start -->
-<!-- <div
-      class="breadcrumb-area bg-overlay"
-      style="background-image: url(' {% static 'assets/img/bg/3.png' %} ')"
-    >
-      <div class="container">
-        <div class="breadcrumb-inner">
-          <div class="section-title mb-0 text-center">
-            <h2 class="page-title">Contact</h2>
-            <ul class="page-list">
-              <li><a href=" {% static 'index.html' %} ">Home</a></li>
-              <li>Contact</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div> -->
-<!-- breadcrumb end -->
-
 <!-- contact list start -->
 <div class="contact-list pd-top-120 pd-bottom-90">
   <div class="container">
@@ -31,8 +12,8 @@
             </div>
             <div class="media-body align-self-center">
               <h5>Our Phone</h5>
-              <p>+233-3223- 98766 (Tel)</p>
-              <p>+233-206-030-790 (Cell)</p>
+              <p>{{ data.telephone }} (Tel)</p>
+              <p>{{ data.cell_phone }} (Cell)</p>
             </div>
           </div>
         </div>
@@ -45,8 +26,8 @@
             </div>
             <div class="media-body align-self-center">
               <h5>Our Email</h5>
-              <p>mcfsecretariat@knust.edu.gh</p>
-              <p>mcfknust@gmail.com</p>
+              <p>{{ data.email1 }}</p>
+              <p>{{ data.email2 }}</p>
             </div>
           </div>
         </div>
@@ -59,12 +40,7 @@
             </div>
             <div class="media-body align-self-center">
               <h5>Our Postal Address</h5>
-              <p>The Program Manager,</p>
-              <p>MCF Scholars Program at KNUST</p>
-              <p>Dean of Students Office,</p>
-              <p>PMB, UPO, Kumasi</p>
-
-              <p>Ghana, West Africa</p>
+              {{ data.address|safe }}
             </div>
           </div>
         </div>
@@ -85,26 +61,22 @@
 
           <ul class="social-media mt-md-0 mt-3">
             <li>
-              <a class="facebook" href="https://www.facebook.com/mcfspatknust"
+              <a class="facebook" href="{{ socials.facebook }}"
                 ><i class="fa fa-facebook"></i
               ></a>
             </li>
             <li>
-              <a class="twitter" href="https://twitter.com/mcfspatknust"
+              <a class="twitter" href="{{ socials.twitter }}"
                 ><i class="fa fa-twitter"></i
               ></a>
             </li>
             <li>
-              <a
-                class="instagram"
-                href="https://www.instagram.com/mcfspatknust/"
+              <a class="instagram" href="{{ socials.instagram }}"
                 ><i class="fa fa-instagram"></i
               ></a>
             </li>
             <li>
-              <a
-                class="youtube"
-                href="https://youtube.com/channel/UCK2hx6d86sS56_ItMiTt2QA"
+              <a class="youtube" href="{{ socials.youtube }}"
                 ><i class="fa fa-youtube"></i
               ></a>
             </li>
@@ -154,7 +126,7 @@
 <!-- contact area start -->
 <div class="contact-g-map">
   <iframe
-    src="https://maps.google.com/maps?q=knust&t=&z=13&ie=UTF8&iwloc=&output=embed"
+    src="{{ data.map }}"
   ></iframe>
 </div>
 <!-- contact area end -->

@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.db import models
-from .models import Index, About, Cohort, Register, Staff, Event, News, Announcements, Publications, Contact, Socials
+from .models import Index, About, Cohort, CohortBatch, Register, Staff, Event, News, Announcements, Publications, Contact, Socials
 
 
-@admin.register(Index, About, Cohort, Register, Staff, Event, News, Announcements, Publications, Contact, Socials)
+@admin.register(Index, About, Cohort, CohortBatch, Register, Staff, Event, News, Announcements, Publications, Contact, Socials)
 class IndexAdmin(admin.ModelAdmin):
     logo = models.ImageField()
     motto = models.CharField(max_length=128)
@@ -31,6 +31,11 @@ class CohortAdmin(models.Model):
     img = models.ImageField()
     name = models.CharField(max_length=64)
     programme = models.CharField(max_length=64)
+
+
+class CohortBatchAdmin(models.Model):
+    batch = models.CharField(max_length=64)
+    cohort = models.ForeignKey(Cohort, on_delete=models.CASCADE)
 
 
 class RegisterAdmin(models.Model):

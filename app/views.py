@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from .models import Index, About, Cohort, Register, Staff, Event, News, Announcements, Publications, Contact, Socials
-
+from .models import Index, About, CohortBatch, Register, Staff, Event, News, Announcements, Publications, Contact, Socials
 
 
 def index(request, context={}):
@@ -27,17 +26,19 @@ def staff(request, context={}):
     return render(request, 'staff.html', context)
 
 
-def event(request,context={}):
+def event(request, context={}):
     context['data'] = Event.objects.all()
     return render(request, 'event.html', context)
 
 
-def news(request):
-    return render(request, 'news.html')
+def news(request, context={}):
+    context['data'] = News.objects.all()
+    return render(request, 'news.html', context)
 
 
-def announcements(request):
-    return render(request, 'announcements.html')
+def announcements(request, context={}):
+    context['data'] = Announcements.objects.all()
+    return render(request, 'announcements.html', context)
 
 
 def publications(request, context={}):
@@ -45,19 +46,27 @@ def publications(request, context={}):
     return render(request, 'publications.html', context)
 
 
-def contact(request):
-    return render(request, 'contact.html')
+def contact(request, context={}):
+    context['data'] = Contact.objects.get(pk=1)
+    context['socials'] = Socials.objects.get(pk=1)
+    return render(request, 'contact.html', context)
 
 
-def cohort(request, id):
+def cohort(request, id, context={}):
+    context['data'] = CohortBatch.objects.all()
     match id:
         case '1':
-            return render(request, 'cohort_one.html')
+            context['data'].filter(batch='2014/2015 Academic Year')
+            return render(request, 'cohort_one.html', context)
         case '2':
-            return render(request, 'cohort_two.html')
+            context['data'].filter(batch='2015/2016 Academic Year')
+            return render(request, 'cohort_two.html', context)
         case '3':
-            return render(request, 'cohort_three.html')
+            context['data'].filter(batch='2016/2017 Academic Year')
+            return render(request, 'cohort_three.html', context)
         case '4':
-            return render(request, 'cohort_four.html')
+            context['data'].filter(batch='2017/2018 Academic Year')
+            return render(request, 'cohort_four.html', context)
         case '5':
-            return render(request, 'cohort_five.html')
+            context['data'].filter(batch='2018/2019 Academic Year')
+            return render(request, 'cohort_five.html', context)

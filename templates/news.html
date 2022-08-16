@@ -1,213 +1,37 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 
-
-    <!-- breadcrumb start -->
-    <!-- <div
-      class="breadcrumb-area bg-overlay"
-      style="background-image: url(' {% static 'assets/img/bg/3.png' %} ')"
-    >
-      <div class="container">
-        <div class="breadcrumb-inner">
-          <div class="section-title mb-0 text-center">
-            <h2 class="page-title">News</h2>
+<!-- blog area start -->
+<div class="blog-area pd-top-120 pd-bottom-120">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="td-sidebar">
+          <div class="widget widget-recent-post">
+            <!-- <h4 class="widget-title">Recent News</h4> -->
+            <ul>
+              {% for i in data %}
+              <li>
+                <div class="media">
+                  <div class="media-left">
+                    <img src="{{ i.img.url }}" alt="blog" />
+                  </div>
+                  <div class="media-body align-self-center">
+                    <h5 class="title">
+                      <a href="#">{{ i.title }}</a>
+                    </h5>
+                    <p>{{ i.info }}</p>
+                    <div class="post-info">
+                      <i class="fa fa-calendar"></i
+                      ><span>{{ i.date_published }}</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
           </div>
-        </div>
-      </div>
-    </div> -->
-    <!-- breadcrumb end -->
 
-    <!-- blog area start -->
-    <div class="blog-area pd-top-120 pd-bottom-120">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="td-sidebar">
-              <div class="widget widget-recent-post">
-                <!-- <h4 class="widget-title">Recent News</h4> -->
-                <ul>
-                  <li>
-                    <div class="media">
-                      <div class="media-left">
-                        <img
-                          src="https://mcf.knust.edu.gh/sites/mcf.knust.edu.gh/files/2022-02/Mentors%20and%20Mentees%20Welcome%20Program.jpg"
-                          alt="blog"
-                        />
-                      </div>
-                      <div class="media-body align-self-center">
-                        <h5 class="title">
-                          <a href=" {% static 'single-blog.html' %} "
-                            >WiSTEM-KNUST/MCFSP at KNUST Holds Mentors and
-                            Mentees Welcome Programme</a
-                          >
-                        </h5>
-                        <p>
-                          In furtherance of the mentorship role in Phase II of
-                          the Mastercard Foundation Scholars Program (MCFSP) at
-                          Kwame Nkrumah University of Science and Technology
-                          (KNUST), the Women in Science, Technology, and
-                          Mathematics (WiSTEM) and MCFSP at KNUST has held a
-                          ‘Mentors and Mentees Welcome Program’ at
-                        </p>
-                        <div class="post-info">
-                          <i class="fa fa-calendar"></i
-                          ><span>23rd May 2022</span>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media">
-                      <div class="media-left">
-                        <img
-                          src="https://mcf.knust.edu.gh/sites/mcf.knust.edu.gh/files/2021-09/MCFSP%20at%20KNUST%20Equips%20Scholars%20with%20Hands-On%20Skills%20for%20the%20World%20of%20Work.jpg"
-                          alt="blog"
-                        />
-                      </div>
-                      <div class="media-body align-self-center">
-                        <h5 class="title">
-                          <a href=" {% static 'single-blog.html' %} "
-                            >MCFSP at KNUST Equips Scholars with Hands-On Skills
-                            for the World of Work</a
-                          >
-                        </h5>
-                        <p>
-                          Mastercard Foundation Scholars Program (MFSP) at Kwame
-                          Nkrumah University of Science and Technology (KNUST)
-                          has launched its annual week-long Summer Skills
-                          Training Programme (Summer Camp) to prepare scholars
-                          for the job market.
-                        </p>
-                        <div class="post-info">
-                          <i class="fa fa-calendar"></i
-                          ><span>Published: 28th Apr 2022</span>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li>
-                    <div class="media">
-                      <div class="media-left">
-                        <img
-                          src="https://mcf.knust.edu.gh/sites/mcf.knust.edu.gh/files/2021-08/Assistive%20Devices%2001.jpg"
-                          alt="blog"
-                        />
-                      </div>
-                      <div class="media-body align-self-center">
-                        <h5 class="title">
-                          <a href=" {% static 'single-blog.html' %} "
-                            >MCFSP at KNUST has Presented Assistive Devices to
-                            Scholars with Impairment</a
-                          >
-                        </h5>
-                        <p>
-                          The Counselling Unit of Mastercard Foundation Scholars
-                          Program (MCFSP) at Kwame Nkrumah University of Science
-                          and Technology (KNUST) has presented some assistive
-                          devices to scholars with impairments to assist them in
-                          their academic works and their activities on Campus in
-                          general.
-                        </p>
-                        <div class="post-info">
-                          <i class="fa fa-calendar"></i
-                          ><span>10th Feb 2021</span>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media">
-                      <div class="media-left">
-                        <img
-                          src="https://mcf.knust.edu.gh/sites/mcf.knust.edu.gh/files/2021-08/Health%20Screening%20Programme.jpg"
-                          alt="blog"
-                        />
-                      </div>
-                      <div class="media-body align-self-center">
-                        <h5 class="title">
-                          <a href=" {% static 'single-blog.html' %} ">
-                            Health Screening Programme for Mastercard Foundation
-                            Scholars at KNUST Organised</a
-                          >
-                        </h5>
-                        <p>
-                          The Counselling Unit of the Mastercard Foundation
-                          Scholars Program (MCFSP) at Kwame Nkrumah University
-                          of Science and Technology (KNUST) in collaboration
-                          with Peace and Love Hospital and the University
-                          Hospital, KNUST has organised
-                        </p>
-                        <div class="post-info">
-                          <i class="fa fa-calendar"></i
-                          ><span>10th Nov 2020</span>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media">
-                      <div class="media-left">
-                        <img
-                          src="https://mcf.knust.edu.gh/sites/mcf.knust.edu.gh/files/2021-07/Six%20Unit%20Classroom%20Block%20at%20Agona%20Wiamoase.jpg"
-                          alt="blog"
-                        />
-                      </div>
-                      <div class="media-body align-self-center">
-                        <h5 class="title">
-                          <a href=" {% static 'single-blog.html' %} ">
-                            Mastercard Foundation Scholars Commission a Six (6)
-                            Unit Classroom Block at Agona Wiamoase</a
-                          >
-                        </h5>
-                        <p>
-                          The Scholars Community of Mastercard Foundation
-                          Scholars Program (MCFSP) at Kwame Nkrumah University
-                          of Science and Technology (KNUST), as part of their
-                          yearly International Day of Service, has commissioned
-                          a renovated six (6) unit classroom block furnished
-                          with one hundred (100) dual desks for t
-                        </p>
-                        <div class="post-info">
-                          <i class="fa fa-calendar"></i
-                          ><span>10th Nov 2020</span>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media">
-                      <div class="media-left">
-                        <img
-                          src="https://mcf.knust.edu.gh/sites/mcf.knust.edu.gh/files/2021-08/Muslim%20Scholars%20of%20MCFSP%20at%20KNUST%20Donate%20to%20All-Nations%20Charity%20Home.jpg"
-                          alt="blog"
-                        />
-                      </div>
-                      <div class="media-body align-self-center">
-                        <h5 class="title">
-                          <a href=" {% static 'single-blog.html' %} ">
-                            Muslim Scholars of MCFSP at KNUST Donate to
-                            All-Nations Charity Home</a
-                          >
-                        </h5>
-                        <p>
-                          The Muslim scholars of the Mastercard Foundation
-                          Scholars Program (MCFSP) at Kwame Nkrumah University
-                          of Science and Technology (KNUST) as part of
-                          celebrating Eid-ul-Fitr have marked the day by
-                          donating; food stuffs, toiletries and 10 bags of
-                          cement to the All-Nations Charity Home at Ayigya-Kumas
-                        </p>
-                        <div class="post-info">
-                          <i class="fa fa-calendar"></i
-                          ><span>10th Nov 2020</span>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- <div class="widget widget_tags mb-0">
+          <!-- <div class="widget widget_tags mb-0">
                             <h4 class="widget-title">Tags</h4>
                             <div class="tagcloud">
                                 <a href="#">Art</a>
@@ -220,10 +44,10 @@
                                 <a href="#">Landing</a>
                             </div>
                         </div> -->
-            </div>
-          </div>
         </div>
       </div>
     </div>
-    <!-- blog area end -->
-    {% endblock content %}
+  </div>
+</div>
+<!-- blog area end -->
+{% endblock content %}

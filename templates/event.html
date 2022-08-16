@@ -16,7 +16,7 @@
           <div class="media-body details">
             <ul class="blog-meta">
               <li>
-                <i class="fa fa-clock-o"></i> {{ i.date_posted|date:"h:i" }}
+                <i class="fa fa-clock-o"></i> {{ i.date_posted.time }}
               </li>
               <li><i class="fa fa-map-marker"></i> {{ i.location }}</li>
             </ul>
