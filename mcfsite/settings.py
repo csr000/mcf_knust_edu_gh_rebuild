@@ -31,6 +31,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SUMMERNOTE_THEME = 'bs5'  # Show summernote with Bootstrap5
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -44,6 +46,9 @@ INSTALLED_APPS = [
     # Local
     'app.apps.AppConfig',
     'accounts.apps.AccountsConfig',
+
+    # extra
+    'django_summernote'
 ]
 
 MIDDLEWARE = [

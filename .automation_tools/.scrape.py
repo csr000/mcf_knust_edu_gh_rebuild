@@ -45,7 +45,7 @@
 from bs4 import BeautifulSoup
 import requests
 
-url = 'https://mcf.knust.edu.gh/index.php/scholars/cohort-two'
+url = 'https://mcf.knust.edu.gh/index.php/scholars/cohort-five'
 
 res = requests.get(url)
 print(res.status_code)
@@ -83,8 +83,8 @@ print(x)
 #         """.format(_[0], _[1], _[2]).replace("\n", "") for _ in list(res)]
 
 
-# with open("dump.txt", 'w') as f:
-#     f.write(''.join(new))
+with open("dump.txt", 'w') as f:
+    f.write(''.join(str(x)))
 
 # ===============================================================================================================================
 # ===============================================================================================================================
